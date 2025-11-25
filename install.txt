@@ -1,0 +1,15 @@
+conda create -n sam3d-objects python=3.10
+conda activate sam3d-objects
+conda install pytorch==2.4.0 torchvision==0.19.0 mkl==2023.1.0 pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install -r requirements.txt 
+pip install -r requirements.dev.txt 
+
+# p3d txt
+pip install --no-index --no-cache-dir pytorch3d -f  https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py310_cu121_pyt240/download.html
+pip install flash_attn==2.7.4.post1
+
+# inference txt
+pip install kaolin -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.4.0_cu121.html
+pip install https://github.com/nerfstudio-project/gsplat/releases/download/v1.5.3/gsplat-1.5.3+pt24cu121-cp310-cp310-linux_x86_64.whl
+pip install seaborn
+pip install gradio
